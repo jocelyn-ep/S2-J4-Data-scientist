@@ -71,14 +71,39 @@ end
 
 def perform
   handles = get_handles
-  h_count(handles)
-  h_min_length(handles)
-  h_length_5(handles)
-  h_capital(handles)
-  h_sorted(handles)
-  h_sorted_length(handles)
-  h_position_epenser(handles)
-  h_repartition(handles)
+  puts '-' * 10
+  #Le principe du menu est de demander un nombre à l'utilisateur pour que le programme réponde à la question correspondante grâce à un gros if. Je voyais pas comment faire un menu en def s'il était pas contenu dans la def perform
+  puts "Menu \n 
+  Tape le numéro de la question à laquelle tu veux répondre :\n  
+  1.Combien y a-t-il de handle dans cette array ?\n  
+  2.Quel est le handle le plus court de cette liste ?\n  
+  3.Combien y-a-t'il de handle contenant 5 caractères (le @ ne compte pas pour un caractère)\n 
+  4.Combien commencent par une majuscule (première lettre juste après le @) ?\n   
+  5.Trie la liste de handle par ordre alphabétique.\n 
+  6.Trie la liste de handle par taille des handle (les plus petits en premiers, les plus grands après)\n
+  7.Quelle est la position dans l'array de la personne @epenser ?\n 
+  8.Sors-moi une répartition des handle par taille de ces derniers (nombre de handle avec 1 caractère, nombre de handle avec 2 caractères, nombre de handle avec 3 caractères, etc)\n  "
+  print ">"
+  choice = gets.chomp.to_i
+  if choice == 1
+    then h_count(handles)
+  elsif choice == 2
+    then h_min_length(handles)
+  elsif choice == 3
+    then h_length_5(handles)
+  elsif choice == 4
+    then h_capital(handles)
+  elsif choice == 5
+    then h_sorted(handles)
+  elsif choice == 6
+    then h_sorted_length(handles)
+  elsif choice == 7
+    then h_position_epenser(handles)
+  elsif choice == 8
+    then h_repartition(handles)
+  else 
+    puts "Tu essayes de casser mon joli menu ? :'("
+  end
 end
 
 perform

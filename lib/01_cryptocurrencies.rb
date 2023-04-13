@@ -7,6 +7,7 @@ def get_hash
  #Les valeurs sont initialement en string, il faut les convertir en float
   prices.map!{|price| price.to_f}
 
+  #méthode pour rentrer 2 array dans un hash en key et value. Ici k=key=currencies, v=value=prices
   hash = Hash[currencies.zip prices]
   return hash
 end 
@@ -19,6 +20,7 @@ def max_value(hash)
 end
 
 def min_value(hash)
+  #La méthode min_by parcourt le hash initial et retourne un hash avec la plus faible value. Ici k=key=currencies, v=value=prices
   crypto_min_value = hash.min_by{|k,v| v }
   puts "La crypto avec la plus faible valeur est le #{crypto_min_value.at(0)} avec #{crypto_min_value.at(1)} $/crypto. BUYYYYYYYYYYY"
   puts '-' * 10
@@ -26,8 +28,10 @@ def min_value(hash)
 
 def crypto_under_6000(hash)
   under_6000 ={}
+  #boucle qui va parcourir chaque key et value du hash
   hash.each do |k,v|
     if v < 6000
+        #commande qui permet d'insérer les données du hash initial dans un nouveau hash vide initié plus haut
       then under_6000[k]=v
     end
   end
@@ -38,6 +42,7 @@ def crypto_under_6000(hash)
   puts '-' * 10
 end
 
+#cet question est un mix de la question 3 et question 1
 def max_crypto_under_6000(hash)
   under_6000 ={}
   hash.each do |k,v|
