@@ -6,14 +6,14 @@ end
 def h_count(handles)
   #La méthode .count appliquée à l'array handles compte le nombre d'éléments. Aurait aussi marché avec .length et .size
   puts '-' * 10
-  puts "Il y a #{handles.count} handles dans cette liste"
+  puts "Il y a #{handles.count} handles dans cette liste. Ca en fait du tweet"
 end
 
 def h_min_length(handles)
   #Ma compréhension : La méthode .min_by crée un hash, leur assigne une valeur (ici handle.length) puis parcours chaque key (ici handle) pour trouver la valeur min
   puts '-' * 10
   min_handle = handles.min_by{|handle| handle.length}
-  puts "Le handle le plus court est #{min_handle}"
+  puts "Le handle le plus court est #{min_handle}. Massachussets Institute of Nuts"
 end
 
 def h_length_5(handles)
@@ -47,7 +47,7 @@ end
 def h_position_epenser(handles)
   #La méthode .index permet d'indiquer la position de l'argument dans l'array
   puts '-' * 10
-  puts "La position de la personne @epenser dans l'array est #{handles.index("@epenser")}"
+  puts "La position de la personne @epenser dans l'array est #{handles.index("@epenser")}. N'oubliez pas d'e-penser"
 end
 
 def h_repartition(handles)
